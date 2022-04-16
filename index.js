@@ -1,14 +1,17 @@
 console.log(data)
 
 function App() {
+  const [product, setProduct] = useState()
+  const buttons = data.map((product) =>(
+    <button className="product" key = {product.id} >
+      <div>{product.title}</div>
+      <div>{product.price} c</div>
+    </button>
+  ))
+
   return (
     <div className="App">
-      <div className="product-list">
-        <button className="product" >
-          <div>Название</div>
-          <div>Цена c</div>
-        </button>
-      </div>
+      <div className="product-list">{buttons} </div>
       <div className="basket">
         <div className="total">
           <span>Итого:</span>
